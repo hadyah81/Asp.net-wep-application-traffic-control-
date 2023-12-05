@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebApplication2.Models.Violation>
+@{
+    ViewData["Title"] = "Monthly and yearly Violation Report";
+}
+@{
+    Layout = "AdminLayout";
+}
+
+
+<h2 class="btn btn-outline-primary btn-sm mb-0 me-3"> Monthly& Annual  Violation Report</h2>
+<hr />
+<form method="get" asp-action="Montlyreport">
+    <label for="year" class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Year:</label>
+    <select name="year" id="year">
+        @for (int y = DateTime.Now.Year; y >= 2000; y--)
+        {
+
+            <option value="@y">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                @y</a>
+                </option>
+        }
+    </select>
+
+    <label for="month" class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Month:</label>
+    <select name="month" id="month">
+        @for (int m = 1; m <= 12; m++)
+        {
+            <option value="@m">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                @m</a>
+                </option>
+        }
+    </select>
+    <hr />
+    <button type="submit" class="btn btn-primary">Generate Report</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+               Violation Date
+                </a>
+                </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    Violation Fineamount
+                </a>
+            </td>
+            <!-- Add additional columns as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violation in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @violation.ViolationDate.ToShortDateString()</a></td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @violation.Fineamount
+                    </a></td>
+                <!-- Add additional columns as needed -->
+            </tr>
+        }
+        <p class="btn btn-outline-primary btn-sm mb-0 me-3">Number of Violations: @ViewBag.count</p>
+        <p class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Total amounts paid = @ViewBag.f</p>
+    </tbody>
+</table>

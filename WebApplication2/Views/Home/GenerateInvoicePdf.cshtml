@@ -1,0 +1,17 @@
+﻿@model WebApplication2.Models.Customer
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+</head>
+<body>
+    <h1>Invoice</h1>
+    <p>Invoice Number:@Model.Email</p>
+    <p>Invoice Date: @Model.Lname</p>
+    <!-- Add more invoice details here -->
+</body>
+<a asp-action="GenerateInvoicePdf"></a>
+</html>

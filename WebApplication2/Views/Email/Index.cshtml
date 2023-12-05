@@ -1,0 +1,51 @@
+﻿@model Email
+@{
+    Layout = "UserLayout";
+
+}
+<div class="col-6">
+    <form action="Index" method="post">
+        <div class="form-group">
+            <label asp-for="TO" class="control-label">
+                To:
+            </label>
+            <input asp-for="TO" class="form-control" />
+            <span asp-validation-for="TO" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Subject" class="control-label">
+                Subject
+            </label>
+            <input asp-for="Subject" class="form-control" />
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Body" class="control-label">
+                Body
+            </label>
+            <input asp-for="Body" class="form-control" />
+            <span asp-validation-for="Body" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Gmail" class="control-label">
+                Gmail
+            </label>
+            <input asp-for="Gmail" class="form-control" />
+            <span asp-validation-for="Gmail" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="password" class="control-label">
+                password
+            </label>
+            <input asp-for="password" class="form-control" type="password"/>
+            <span asp-validation-for="password" class="text-danger"></span>
+        </div>
+
+
+
+<button type="submit">Send </button>
+
+
+    </form>
+</div>

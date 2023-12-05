@@ -1,0 +1,39 @@
+﻿@model WebApplication2.Models.Testimonial
+
+@{
+    Layout = "AdminLayout";
+}
+
+
+<div>
+    <h4 class="btn btn-primary">Delete Testimonial</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Content)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.Content)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Status)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.Status)
+            </a>
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Testimonialid" />
+        <input type="submit" value="Delete" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,96 @@
+﻿@model join2
+
+@{
+    Layout = "UserLayout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the customer information */
+        .customer-info {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Style for the vehicle information */
+        .vehicle-card {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Style for the violation list */
+        .violation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .violation-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="mt-4">Customer Info:</h2>
+    <div class="customer-info">
+        <p><strong>Customer Name :</strong> @Model.Customer.Fname @Model.Customer.Lname</p>
+        <p><strong>Licensenumber: </strong> @Model.Customer.Licensenumber</p>
+        <p><strong>Contactnumber:  </strong> @Model.Customer.Contactnumber</p>
+    </div>
+
+   
+    @foreach (var r in Model.Vehicles)
+    {
+        <h2 class="mt-4">Vehicle Info :</h2>
+        <div class="vehicle-card">
+            <p><strong>Vehicle Color: </strong> @r.Color</p>
+            <p><strong>Vehicle Model: </strong> @r.Model</p>
+            <p><strong>Vehicle StructureNo :</strong> @r.StructureNo</p>
+            <p><strong>Vehicle Year :</strong> @r.Year</p>
+        </div>
+
+        <ul class="violation-list">
+            @foreach (var violation in Model.Violations.Where(v => v.Vehicleid == r.Vehicleid))
+            {
+                <h2>Violation Info :</h2>
+                <li class="violation-item">
+                    <p><strong>Date : </strong> @violation.ViolationDate</p>
+                    <p><strong>Fineamount :</strong> @violation.Fineamount</p>
+                    <p><strong>Citationnumber : </strong> @violation.Citationnumber</p>
+                    <p><strong>CourtName : </strong> @violation.CourtName</p>
+                    <p><strong>ViolationLocation : </strong> @violation.ViolationLocation</p>
+                    <p><strong>ViolationDescription : </strong> @violation.ViolationDescription</p>
+                    <p>
+                    
+                    
+                 
+                    <form asp-controller="Order" asp-action="Index" >
+                       <button type="submit" class="btn btn-dark">pay</button>
+                   </form>
+                </li>
+             
+            }
+        </ul>
+    }
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

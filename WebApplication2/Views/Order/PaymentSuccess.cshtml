@@ -1,0 +1,25 @@
+﻿
+
+
+@model OrderEntity
+@{
+    Layout="UserLayout";
+}
+<div class="align-content-center">
+    <div class="text-center" text-success">
+        <h3>Payment Recived Succesfully!!</h3>
+        </div>
+        <br/>
+        <table class="table table-striped" width="10px">
+            <thead>
+                <tr>
+                    <td><b>Transaction Number</b></td>
+                    <td>@Html.DisplayText("TransactionId")</td>
+                    </tr>
+                    <tr>
+ <td><b>Order Number</b></td>
+  <td>@Html.DisplayText("OrderId")</td>
+   </tr>
+   </thead>
+   </table>
+   </div>

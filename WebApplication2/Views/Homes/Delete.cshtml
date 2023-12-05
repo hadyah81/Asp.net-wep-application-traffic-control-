@@ -1,0 +1,59 @@
+﻿@model WebApplication2.Models.Home
+
+@{
+    Layout = "AdminLayout";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+
+
+<div>
+        <h1 class="btn btn-primary">Delete Home</h1>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+            @Html.DisplayNameFor(model => model.Title)
+            </a>
+        </dt>
+        <dd class = "col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+            @Html.DisplayFor(model => model.Title)
+            </a>
+        </dd>
+        <dt class = "col-sm-2">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+            @Html.DisplayNameFor(model => model.Content)
+            </a>
+        </dt>
+        <dd class = "col-sm-10">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+            @Html.DisplayFor(model => model.Content)
+            </a>
+        </dd>
+        <dt class = "col-sm-2">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+            @Html.DisplayNameFor(model => model.Imagepath)
+            </a>
+        </dt>
+        <dd class = "col-sm-10">
+                <img src="@Url.Content("~/Images/" + Model.Imagepath )" asp-append-version="true" width="100" height="100" />
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn btn-primary" /> 
+            <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    </form>
+</div>
+</body>
+</html>

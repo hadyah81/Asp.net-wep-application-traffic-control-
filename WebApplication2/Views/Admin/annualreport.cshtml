@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApplication2.Models.Violation>
+@{
+    ViewData["Title"] = "Yearly Violation Report";
+}
+@{
+    Layout = "AdminLayout";
+}
+
+<h4 class="btn btn-outline-primary btn-sm mb-0 me-3">Yearly Violation Report</h4>
+<hr />
+<form method="get" asp-action="annualreport">
+    <label for="year" class="btn btn-outline-primary btn-sm mb-0 me-3">Year:</label>
+    <select name="year" id="year">
+        @for (int y = DateTime.Now.Year; y >= 2000; y--)
+        {
+            <option value="@y">@y</option>
+        }
+    </select>
+    <hr />
+    <button type="submit" class="btn btn-primary">Generate Report</button>
+    
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                Year</a>
+                </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                Number of Violations</a>
+            </td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var yearGroup in Model.GroupBy(v => v.ViolationDate.Year))
+        {
+       
+            <tr>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @yearGroup.Key</a></td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @yearGroup.Count()</a>
+                    </td>
+                </tr>
+      
+          
+        }
+      
+    </tbody>
+    <p class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Total amounts paid = @ViewBag.f</p>
+</table>

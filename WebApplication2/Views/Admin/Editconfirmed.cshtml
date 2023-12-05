@@ -1,0 +1,91 @@
+﻿@model WebApplication2.Models.Customer
+
+@{
+    Layout = "AdminLayout";
+}
+
+<h1>Edit</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editconfirmed" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Fname" class="control-label"></label>
+                <input asp-for="Fname" class="form-control" />
+                <span asp-validation-for="Fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lname" class="control-label"></label>
+                <input asp-for="Lname" class="form-control" />
+                <span asp-validation-for="Lname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ssn" class="control-label"></label>
+                <input asp-for="Ssn" class="form-control" />
+                <span asp-validation-for="Ssn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nationality" class="control-label"></label>
+                <input asp-for="Nationality" class="form-control" />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Licensenumber" class="control-label"></label>
+                <input asp-for="Licensenumber" class="form-control" />
+                <span asp-validation-for="Licensenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseCategory" class="control-label"></label>
+                <input asp-for="LicenseCategory" class="form-control" />
+                <span asp-validation-for="LicenseCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicensingCenter" class="control-label"></label>
+                <input asp-for="LicensingCenter" class="form-control" />
+                <span asp-validation-for="LicensingCenter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contactnumber" class="control-label"></label>
+                <input asp-for="Contactnumber" class="form-control" />
+                <span asp-validation-for="Contactnumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="ImagePath" class="control-label"></label>
+                <input asp-for="ImagePath" class="form-control" />
+                <span asp-validation-for="ImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+
+         @*   <div class="form-group">
+                <input   type="submit" value="Save" class="btn btn-primary" asp-action="Editconfirmed" method="Post"  />
+              <a type="submit" asp-action="Editconfirmed" class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" method="Post">edit</a>
+       
+            </div>*@
+            
+       
+        <div class="form-group" asp-action="Editconfirmed">
+            <input type="submit" value="Save" class="btn btn-primary" asp-action="Editconfirmed" method="Post" />
+        </div>
+        </form>
+    </div>
+</div>
+
+

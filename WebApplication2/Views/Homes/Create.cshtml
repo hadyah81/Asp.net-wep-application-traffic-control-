@@ -1,0 +1,61 @@
+﻿@model WebApplication2.Models.Home
+
+@{
+    Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create Home </title>
+</head>
+<body>
+
+    <h1 class="btn btn-primary">Create Home</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="Title" class="control-label"></label>
+                </a>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+                </a>
+            </div>
+                <hr />
+            <div class="form-group">
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="Content" class="control-label"></label>
+                </a>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+                </a>
+            </div>
+                <hr />
+            <div class="form-group">
+  <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="ImageFile" class="control-label"></label>
+                </a>
+                <input asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+</body>
+</html>

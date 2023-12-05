@@ -1,0 +1,138 @@
+﻿@model IEnumerable<WebApplication2.Models.Violation>
+@{
+
+    Layout = "AdminLayout";
+}
+
+
+
+<p>
+    @*   <a asp-action="Create">Create New</a>*@
+
+    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" asp-action="Create" type="button">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.PoliceDirectorate)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.CourtName)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.ViolationDate)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.ViolationTime)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.ViolationLocation)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.Street)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.ViolationDescription)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.Fineamount)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.Citationnumber)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.Customer)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    @Html.DisplayNameFor(model => model.Vehicle)
+                </a>
+            </td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.PoliceDirectorate)
+                    </a>
+
+                </td>
+
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.CourtName)
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.ViolationDate)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.ViolationTime)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.ViolationLocation)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.ViolationDescription)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.Fineamount)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.Citationnumber)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.Customer.Id)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @Html.DisplayFor(modelItem => item.Vehicle.Vehicleid)
+                </td>
+                <td>
+                    @*<a asp-action="Edit" asp-route-id="@item.Violationid">Edit</a> |*@
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" asp-action="Edit" type="button" asp-route-id="@item.Violationid">Edit</a>
+
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" asp-action="Details" asp-route-id="@item.Violationid">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Violationid" class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

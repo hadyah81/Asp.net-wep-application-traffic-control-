@@ -1,0 +1,128 @@
+﻿@model IEnumerable<WebApplication2.Models.Vehicle>
+
+@{
+   
+    Layout = "UserLayout";
+}
+
+
+
+<a asp-action="Create" class="btn btn-primary">Create New Car:</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.StructureNo)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.VehicleRegistrationNumber)
+                </a>
+            </td>
+            <td>
+                  <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.RegistrationStatus)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.VehicleCategory)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.VehicleType)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                    @Html.DisplayNameFor(model => model.VehicleNationality)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Model)  </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                    @Html.DisplayNameFor(model => model.Color)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                    @Html.DisplayNameFor(model => model.Year)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                    @Html.DisplayNameFor(model => model.Customer)
+                </a>
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.StructureNo)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                        @Html.DisplayFor(modelItem => item.VehicleRegistrationNumber)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                        @Html.DisplayFor(modelItem => item.RegistrationStatus)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.VehicleCategory)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.VehicleType)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.VehicleNationality)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.Model)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.Color)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.Year)
+                    </a>
+            </td>
+            <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(modelItem => item.Customer.Id)
+                </a>
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Vehicleid" class="btn btn-primary">Edit</a> 
+                    <a asp-action="Details" asp-route-id="@item.Vehicleid" class="btn btn-primary">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.Vehicleid" class="btn btn-primary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,97 @@
+﻿@model WebApplication2.Models.EmailModel  
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Send mail</title>
+    <style type="text/css">
+body{
+    font-family:Arial;
+    font-Size:10pt;
+}
+table th,table td{
+    padding:5px;
+}
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("SendMail","Home",FormMethod.Post,new
+        {
+            enctype="multipart/form-data"}))
+            {
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width:80px">
+                       To :
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model=>model.TO)
+                    </td>
+                </tr>
+                <tr>
+
+                <tr>
+                    <td>
+                       Subject :
+                    </td>
+                    <td>
+                            @Html.TextBoxFor(model=>model.Subject)
+                    </td>
+                </tr>
+                <tr>
+
+                <tr>
+                    <td valign="top">
+                      body :
+                    </td>
+                    <td>
+                                @Html.TextAreaFor(model=>model.Body,new {rows="3",cols="20"})
+                    </td>
+                </tr>
+                <tr>
+
+
+
+
+                <tr>
+                    <td>
+                        Gmail Email :
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model=>model.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gmail password :
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model=>model.password,new {type="password"})
+                    </td>
+                </tr>
+
+                <td>
+                    <input type="submit" value="Send">
+                </td>
+            </table>
+            <br />
+            <span style="color:green">@ViewBag.Message</span>
+        }
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

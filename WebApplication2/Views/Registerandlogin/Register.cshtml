@@ -1,0 +1,129 @@
+﻿@model WebApplication2.Models.Customer
+
+@{
+   
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/LoginAndRegisterAssets/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/LoginAndRegisterAssets/css/style.css">
+
+</head>
+<body class="i1">
+ 
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Traffic Control</h2>
+        <form asp-action="Register" method="Post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Fname" ><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Fname" placeholder="first name :" />
+                <span asp-validation-for="Fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Lname" placeholder="last name :" />
+                <span asp-validation-for="Lname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Gender" placeholder="Gender" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ssn"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Ssn" placeholder="Ssn" />
+                <span asp-validation-for="Ssn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nationality"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Nationality" placeholder="Nationality" />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Licensenumber"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Licensenumber" placeholder="Licensenumber" />
+                <span asp-validation-for="Licensenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicenseCategory"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="LicenseCategory" placeholder="LicenseCategory" />
+                <span asp-validation-for="LicenseCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LicensingCenter"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="LicensingCenter" placeholder="LicensingCenter" />
+                <span asp-validation-for="LicensingCenter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contactnumber"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Contactnumber" placeholder="Contactnumber" />
+                <span asp-validation-for="Contactnumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="Email" placeholder="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input asp-for="ImageFile" placeholder="ImageFile" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="UserName"><i class="zmdi zmdi-lock-outline"></i></label>
+                <input type="text" name="UserName" id="UserName" placeholder="User Name" />
+            </div>
+
+
+            <div class="form-group">
+                <label for="Pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                <input type="Pass" name="Pass" id="Pass" placeholder="Pass" />
+            </div>
+            <p style="color:red"> @ViewBag.Error</p>
+
+            <div class="form-group form-button">
+                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+            </div>
+
+           @* <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            *@
+        </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="~/LoginAndRegisterAssets/images/photo1697396502.jpeg" alt="sing up image"></figure>
+                 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JS -->
+    <script src="~/LoginAndRegisterAssets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/LoginAndRegisterAssets/js/main.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+  
+

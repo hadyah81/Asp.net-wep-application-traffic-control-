@@ -1,0 +1,124 @@
+﻿@model WebApplication2.Models.Violation
+
+
+<div>
+    <h1 class="btn btn-primary">Details Violation</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.PoliceDirectorate)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.PoliceDirectorate)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.CourtName)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.CourtName)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.ViolationDate)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.ViolationDate)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.ViolationTime)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.ViolationTime)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.ViolationLocation)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.ViolationLocation)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Street)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.Street)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.ViolationDescription)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.ViolationDescription)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Fineamount)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.Fineamount)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Citationnumber)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.Citationnumber)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Customer)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.Customer.Id)
+            </a>
+        </dd>
+        <dt class="col-sm-2">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayNameFor(model => model.Vehicle)
+            </a>
+        </dt>
+        <dd class="col-sm-10">
+            <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                @Html.DisplayFor(model => model.Vehicle.Vehicleid)
+            </a>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Detailsviolation" asp-route-id="@Model.Violationid" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+

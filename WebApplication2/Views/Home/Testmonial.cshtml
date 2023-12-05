@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WebApplication2.Models.Testimonial>
+
+
+
+
+
+
+<div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">Testimonial</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/Home/AboutUs">About us</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Testimonial</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Testimonial Start -->
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <h6 class="text-primary text-uppercase mb-2">Testimonial</h6>
+            <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+        </div>
+       
+            <div class="row justify-content-center">
+                  
+            <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+              
+                <div class="owl-carousel testimonial-carousel">
+                   @foreach (var item in Model)
+                    {
+                    <div class="testimonial-item text-center">
+                        <div class="position-relative mb-5">
+                            <img class="img-fluid rounded-circle mx-auto" src="~/Home/img/ag.jpg" alt="">
+                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
+                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                       
+                        <p class="fs-4">@item.Content</p>
+                        
+                        <hr class="w-25 mx-auto">
+                      
+                       
+                    </div>
+                    }
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+             @*      <div class="testimonial-item text-center">
+                        <div class="position-relative mb-5">
+                            <img class="img-fluid rounded-circle mx-auto" src="~/Home/img/gg.png" alt="">
+                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
+                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <p class="fs-4">"I absolutely love this site. It offers a smooth and easy-to-use experience. The content is not only useful, but engaging as well, making it a reliable resource. I highly recommend it!".</p>
+                        <hr class="w-25 mx-auto">
+                        <h5>SURA RSHEDAT</h5>
+                        <span>Engineer</span>
+                    </div>
+                    
+                    <div class="testimonial-item text-center">
+                        <div class="position-relative mb-5">
+                            <img class="img-fluid rounded-circle mx-auto" src="~/Home/img/photo1697386045.jpeg" alt="">
+                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
+                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <p class="fs-4">This site has saved me a lot of time and effort in finding out and paying violations.</p>
+                        <hr class="w-25 mx-auto">
+                        <h5>Hassan Ahmad</h5>
+                        <span>Doctor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+</div>
+<!-- Testimonial End -->

@@ -1,0 +1,138 @@
+﻿@model WebApplication2.Models.Violation
+
+@{
+    Layout = "AdminLayout";
+}
+
+
+<h1 class="btn btn-primary">
+    Edit Violation
+</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Violationid" />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="CustomerId" class="control-label"></label>
+                </a>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="Vehicleid" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <select asp-for="Vehicleid" class="form-control" asp-items="ViewBag.Vehicleid"></select>
+                <span asp-validation-for="Vehicleid" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="PoliceDirectorate" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="PoliceDirectorate" class="form-control" />
+                <span asp-validation-for="PoliceDirectorate" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="CourtName" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="CourtName" class="form-control" />
+                <span asp-validation-for="CourtName" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="ViolationDate" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="ViolationDate" class="form-control" />
+                <span asp-validation-for="ViolationDate" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="ViolationTime" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="ViolationTime" class="form-control" />
+                <span asp-validation-for="ViolationTime" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="ViolationLocation" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input   asp-for="ViolationLocation" class="form-control" />
+                <span asp-validation-for="ViolationLocation" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="Street" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="ViolationDescription" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="ViolationDescription" class="form-control" />
+                <span asp-validation-for="ViolationDescription" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="Fineamount" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="Fineamount" class="form-control" />
+                <span asp-validation-for="Fineamount" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <label asp-for="Citationnumber" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                <input asp-for="Citationnumber" class="form-control" />
+                <span asp-validation-for="Citationnumber" class="text-danger"></span>
+                    </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+

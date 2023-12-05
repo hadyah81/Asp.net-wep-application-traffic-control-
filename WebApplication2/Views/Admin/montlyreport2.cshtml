@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebApplication2.Models.Violation>
+@{
+    ViewData["Title"] = "Monthly Violation Report";
+}
+@{
+    Layout = "AdminLayout";
+}
+
+<hr />
+<form method="get" asp-action="montlyreport2">
+     <hr />
+
+    <label for="month" class="btn btn-outline-primary btn-sm mb-0 me-3">Month:</label>
+  <hr />
+    <select name="month" id="month" class="btn btn-primary">
+        @for (int m = 1; m <= 12; m++)
+        {
+            <option value="@m" >@m</option>
+        }
+    </select>
+   
+    <button type="submit" class="btn btn-primary">Generate Report</button>
+</form>
+@if (@ViewBag.count != 0)
+{
+    <table class="table">
+        <thead>
+
+            <tr>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Date</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        Violation Street
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                    CourtName </a></td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                   ViolationLocation</a>
+                   </td>
+               
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        Violation Fineamount
+                    </a>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var violation in Model)
+            {
+                <tr>
+
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @violation.ViolationDate.ToShortDateString()</a></td>
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @violation.Street</a>
+                        </td>
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @violation.CourtName</a>
+                        </td>
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                        @violation.ViolationLocation</a></td>
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">
+                            @violation.Fineamount
+                        </a>
+                    </td>
+                </tr>
+               
+            }
+
+
+            <p class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Number of items: @ViewBag.count</p>
+           
+            <p class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank">Total amounts paid = @ViewBag.f</p>
+            <hr>
+        </tbody>
+    </table>
+}
+@*else @if (@ViewBag.count==0)
+{
+    <p>No Violations on this month</p>
+}*@

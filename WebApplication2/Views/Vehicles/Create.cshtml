@@ -1,0 +1,113 @@
+﻿@model WebApplication2.Models.Vehicle
+
+@{
+   
+    Layout = "UserLayout";
+}
+
+
+<h1 class="btn btn-primary" >Fill this information to add your cars :</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="StructureNo" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="StructureNo" class="form-control" />
+                <span asp-validation-for="StructureNo" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="VehicleRegistrationNumber" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="VehicleRegistrationNumber" class="form-control" />
+                <span asp-validation-for="VehicleRegistrationNumber" class="text-danger"></span>
+                </a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="RegistrationStatus" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="RegistrationStatus" class="form-control" />
+                <span asp-validation-for="RegistrationStatus" class="text-danger"></span></a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="VehicleCategory" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="VehicleCategory" class="form-control" />
+                <span asp-validation-for="VehicleCategory" class="text-danger"></span>
+                </a>
+            </div>
+             <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="VehicleType" class="control-label"></label>
+                </a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="VehicleType" class="form-control" />
+                <span asp-validation-for="VehicleType" class="text-danger"></span>
+                </a>
+            </div>
+             <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="VehicleNationality" class="control-label"></label></a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="VehicleNationality" class="form-control" />
+                <span asp-validation-for="VehicleNationality" class="text-danger"></span></a>
+            </div>
+             <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="Model" class="control-label"></label></a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span></a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="Color" class="control-label"></label></a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span></a>
+            </div>
+            <hr />
+            <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="Year" class="control-label"></label></a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span></a>
+            </div>
+            <hr />
+        @*   <div class="form-group">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <label asp-for="CustomerId" class="control-label"></label></a>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select></a>
+            </div>*@
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/User/Index" class="btn btn-primary">Back to List</a>
+</div>
+
+

@@ -1,0 +1,134 @@
+﻿@model IEnumerable<WebApplication2.Models.Testimonial>
+
+@{
+    Layout = "AdminLayout";
+}
+<head>
+ 
+    <style>
+        /* Style for the custom alert overlay */
+        .custom-alert-button-ok {
+            border: 2px solid #ccc;
+            
+            background:pink;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .custom-alert-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            color:black;
+        }
+
+        .custom-alert-box {
+            background:pink;
+            border: 19px solid #ccc;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            
+        }
+
+        /* Style for the alert title */
+        .custom-alert-title {
+            font-weight: bold;
+        }
+
+        /* Style for the alert message */
+        .custom-alert-message {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                    @Html.DisplayNameFor(model => model.Content)
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                    @Html.DisplayNameFor(model => model.Status)
+                </a>
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </a>
+                </td>
+                <td>
+                   @* <a asp-action="Edit" asp-route-id="@item.Testimonialid" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Testimonialid" class="btn btn-primary">Details</a>*@
+                        <a class="btn btn-primary" asp-action="DeleteConfirmed" asp-route-id="@item.Testimonialid">
+                        Reject
+                            @*    asp-action="DeleteConfirmed"
+                      @item.Status="false"
+                        asp-action="rejectTestimonial"*@
+                           
+                    </a>
+
+                        <a class="btn btn-primary" asp-action="AcceptTestimonial" asp-route-id="@item.Testimonialid">
+                            Accept
+                            @*
+                        onclick="showCustomAlert()"
+                        asp-action="AcceptTestimonial"
+                            *@
+                        </a>
+
+                                  <div class="custom-alert-overlay" id="customAlertOverlay">
+                            <div class="custom-alert-box">
+                                <div class="custom-alert-title">Accepted Alert</div>
+                                <div class="custom-alert-message" id="customAlertMessage">The Testmonial Accepted successfully </div>
+                                <button onclick="closeCustomAlert()" class="custom-alert-button-ok">OK</button>
+                            </div>
+                       
+                      </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+    <script>
+        function showCustomAlert() {
+            var customAlertOverlay = document.getElementById('customAlertOverlay');
+            customAlertOverlay.style.display = 'flex';
+        }
+
+        function closeCustomAlert() {
+            var customAlertOverlay = document.getElementById('customAlertOverlay');
+            customAlertOverlay.style.display = 'none';
+        }
+
+    </script>
+</body>
+   
+
+

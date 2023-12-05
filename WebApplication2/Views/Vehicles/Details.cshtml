@@ -1,0 +1,127 @@
+﻿@model WebApplication2.Models.Vehicle
+
+@{
+    Layout = "UserLayout";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <h1 > Details Vehicle :</h1>
+<div>
+      
+    <dl class="row">
+        <dt class = "col-sm-2">
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3">
+            @Html.DisplayNameFor(model => model.StructureNo) 
+            </a>
+        </dt>
+        <dd class = "col-sm-10">
+         
+            @Html.DisplayFor(model => model.StructureNo)
+            
+        </dd>
+        <dt class = "col-sm-2">
+           
+            @Html.DisplayNameFor(model => model.VehicleRegistrationNumber)
+          
+        </dt>
+        <dd class = "col-sm-10">
+         
+            @Html.DisplayFor(model => model.VehicleRegistrationNumber) 
+          
+        </dd>
+        <dt class = "col-sm-2">
+           
+            @Html.DisplayNameFor(model => model.RegistrationStatus) 
+       
+        </dt>
+        <dd class = "col-sm-10">
+           
+            @Html.DisplayFor(model => model.RegistrationStatus) 
+
+        </dd>
+        <dt class = "col-sm-2">
+         
+            @Html.DisplayNameFor(model => model.VehicleCategory) 
+        </dt>
+        <dd class = "col-sm-10">
+          
+            @Html.DisplayFor(model => model.VehicleCategory) 
+           
+        </dd>
+        <dt class = "col-sm-2">
+          
+            @Html.DisplayNameFor(model => model.VehicleType)
+           
+        </dt>
+        <dd class = "col-sm-10">
+          
+            @Html.DisplayFor(model => model.VehicleType)
+           
+        </dd>
+        <dt class = "col-sm-2">
+          
+            @Html.DisplayNameFor(model => model.VehicleNationality)
+         
+        </dt>
+        <dd class = "col-sm-10">
+           
+            @Html.DisplayFor(model => model.VehicleNationality)
+       
+        </dd>
+        <dt class = "col-sm-2">
+           
+            @Html.DisplayNameFor(model => model.Model)
+          
+        </dt>
+        <dd class = "col-sm-10">
+          
+            @Html.DisplayFor(model => model.Model)
+           
+        </dd>
+        <dt class = "col-sm-2">
+           
+            @Html.DisplayNameFor(model => model.Color)
+            
+        </dt>
+        <dd class = "col-sm-10">
+         
+            @Html.DisplayFor(model => model.Color)
+          
+           
+        </dd>
+        <dt class = "col-sm-2">
+         
+            @Html.DisplayNameFor(model => model.Year)
+          
+        </dt>
+        <dd class = "col-sm-10">
+           
+            @Html.DisplayFor(model => model.Year)
+    
+        </dd>
+        <dt class = "col-sm-2">
+           
+            @Html.DisplayNameFor(model => model.Customer)
+               
+        </dt>
+        <dd class = "col-sm-10">
+         
+            @Html.DisplayFor(model => model.Customer.Id)
+              
+        </dd>
+    </dl>
+</div>
+<div>
+        <a asp-action="Edit" asp-route-id="@Model.Vehicleid" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+</body>
+</html>
